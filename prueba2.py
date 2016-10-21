@@ -18,16 +18,16 @@ print 'Datos de Entrenamiento: '
 # create model
 print 'Creando modelo...'
 model = Sequential()
-model.add(Dense(3000, input_dim=2000, init='uniform', activation='relu'))
-model.add(Dense(2000, init='uniform', activation='relu'))
+model.add(Dense(1000, input_dim=2000, init='uniform', activation='relu'))
 model.add(Dense(1, init='uniform', activation='sigmoid'))
 # Compile model
 print 'Compilando Modelo...'
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 # Fit the model
 print 'Entrenar Modelo...'
-model.fit(X, Y,validation_split=0.33, nb_epoch=100, batch_size=10)
+model.fit(X, Y,validation_split=0.33, nb_epoch=1000, batch_size=10)
 # evaluate the model
+print '=================Evaluacion de Modelo====='
 scores = model.evaluate(X, Y)
 print("%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 # calculate predictions
